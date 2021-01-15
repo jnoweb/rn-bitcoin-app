@@ -19,9 +19,9 @@ function TransactionsTable({ transactions }: Props) {
           <DataTable.Title key={header}>{header}</DataTable.Title>
         ))}
       </DataTable.Header>
-      {transactions.map(({ date, index }) => {
+      {transactions.map(({ date, index }, _index) => {
         return (
-          <DataTable.Row>
+          <DataTable.Row key={_index}>
             <DataTable.Cell>{index}</DataTable.Cell>
             <DataTable.Cell>{date}</DataTable.Cell>
           </DataTable.Row>

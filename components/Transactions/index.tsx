@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { GET_TRANSACTIONS } from './query';
 import Screen from '../Common/Screen';
 import TransactionsTable from './TransactionsTable';
+import {INVALIDATE_CACHE_TIMER} from "../../constants";
 
 const buildTransactions = (data) => {
   if (!data) return [];
@@ -19,7 +20,7 @@ const buildTransactions = (data) => {
 
 function Transactions() {
   const { loading, error, data } = useQuery(GET_TRANSACTIONS, {
-    pollInterval: 500,
+    pollInterval: INVALIDATE_CACHE_TIMER,
   });
 
   return (

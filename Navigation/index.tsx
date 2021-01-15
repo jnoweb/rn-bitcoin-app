@@ -10,8 +10,8 @@ const Tab = createBottomTabNavigator()
 function Nav() {
     return (
         <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="Blocks" component={Blocks}/>
+            <Tab.Navigator tabBarOptions={{labelStyle: {fontSize: 18, marginBottom: 12}}}>
+                <Tab.Screen name="Blocks" component={Blocks} />
                 <Tab.Screen name="Transactions" component={Transactions}/>
             </Tab.Navigator>
         </NavigationContainer>

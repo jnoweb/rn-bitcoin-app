@@ -5,6 +5,7 @@ import { GET_BLOCKS } from './query';
 import Screen from '../Common/Screen';
 import BlocksTable from './BlocksTable';
 import { formatDateTime } from '../../utils';
+import {INVALIDATE_CACHE_TIMER} from "../../constants"
 
 const buildBlockList = (data) => {
   if (!data) return [];
@@ -20,7 +21,7 @@ const buildBlockList = (data) => {
 };
 
 function Blocks() {
-  const { loading, data } = useQuery(GET_BLOCKS, { pollInterval: 500 });
+  const { loading, data } = useQuery(GET_BLOCKS, { pollInterval: INVALIDATE_CACHE_TIMER });
 
   return (
     <Screen title="Blocks" loading={loading}>

@@ -1,0 +1,1 @@
+export const INVALIDATE_CACHE_TIMER = 5000

@@ -21,9 +21,9 @@ function BlocksTable({ blocks }: Props) {
           <DataTable.Title key={header}>{header}</DataTable.Title>
         ))}
       </DataTable.Header>
-      {blocks.map(({ height, hash, time }) => {
+      {blocks.map(({ height, hash, time }, index) => {
         return (
-          <DataTable.Row>
+          <DataTable.Row key={index}>
             <DataTable.Cell>{height}</DataTable.Cell>
             <DataTable.Cell>{time}</DataTable.Cell>
             <DataTable.Cell>{hash}</DataTable.Cell>
