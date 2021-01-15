@@ -1,7 +1,7 @@
 import * as React from "react"
 
-function Root() {
+function Blocks() {
     return null
 }
 
-export default Root
+export default Blocks

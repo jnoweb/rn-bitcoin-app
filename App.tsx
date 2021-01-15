@@ -1,7 +1,7 @@
 import React from 'react';
 import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
 
-import Root from "./components/Root"
+import Navigation from "./Navigation"
 
 const client = new ApolloClient({
   uri:"https://graphql.bitquery.io",
@@ -12,7 +12,7 @@ export default function App() {
   
   return (
     <ApolloProvider client={client}>
-      <Root />
+      <Navigation />
     </ApolloProvider>
   );
 }
