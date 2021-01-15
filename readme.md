@@ -17,7 +17,7 @@ Before you begin, install the latest versions of:
 - **Clone repo:** To do this, run the following command on your **terminal**
 
 ```
-git clone 
+git clone https://github.com/jnoweb/rn-bitcoin-app.git
 ```
 
 - **Navigate to the cloned directory and install dependencies:** Run the following command:
