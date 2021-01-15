@@ -1,23 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"
+
+import Root from "./components/Root"
+
+const client = new ApolloClient({
+  uri:"https://graphql.bitquery.io",
+  cache: new InMemoryCache()
+})
 
 export default function App() {
-  const [outputText, setOutputText] = useState(`Open up App.tsx to start working on your app!`);
+  
   return (
-    <View style={styles.container}>
-      <Text>{outputText}</Text>
-      <Button title="Change Text" onPress={() => setOutputText(`The text changed!`)} />
-      <StatusBar style="auto" />
-    </View>
+    <ApolloProvider client={client}>
+      <Root />
+    </ApolloProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
